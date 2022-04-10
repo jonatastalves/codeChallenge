@@ -1,15 +1,15 @@
-import { medidasPadroes } from "../services/constantes.js"
+import { medidasPadroes, areas, alturaMinima } from "../services/constantes.js"
 
 class Validacoes{
     
     static validaAltura(parede){
 
-        let alturaMinima = 0
+        let alturaMinimaParede = 0
         const altura = parede.alturaDaParede
 
-        if(this.temPorta(parede)) alturaMinima = medidasPadroes.alturaMinima;
+        if(this.temPorta(parede)) alturaMinimaParede = alturaMinima;
 
-        if(typeof altura == 'number' && altura > alturaMinima){
+        if(typeof altura == 'number' && altura > alturaMinimaParede){
             return true
         }else{
             return false;
@@ -47,7 +47,7 @@ class Validacoes{
         return arrReturn;
     }
 
-    static objValido(body, length){
+    static objValido(objValidado){
         if(!objValidado.includes(false)){
             return true;
         }else{
