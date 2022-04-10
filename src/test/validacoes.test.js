@@ -56,3 +56,11 @@ test("Validação de área da parede", ()=>{
 test("Validação de área da parede", ()=>{
     expect(Validacoes.validaArea({alturaDaParede: 1, larguraDaParede: 1, numeroDePortas: 0, numeroDeJanelas: 0})).toBe(true)
 })
+
+test("Validação de área da parede com area igual a 15m2", ()=>{
+    expect(Validacoes.validaArea({alturaDaParede: 3, larguraDaParede: 5, numeroDePortas: 0, numeroDeJanelas: 0})).toBe(true)
+})
+
+test("Validação de área da parede com area maior que 15m2", ()=>{
+    expect(Validacoes.validaArea({alturaDaParede: 4, larguraDaParede: 5, numeroDePortas: 0, numeroDeJanelas: 0})).toBe(false)
+})

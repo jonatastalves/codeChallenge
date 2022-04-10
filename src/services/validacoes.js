@@ -62,7 +62,7 @@ class Validacoes {
 
     const areaParede = parede.alturaDaParede * parede.larguraDaParede;
 
-    if (areaParede >= 1) {
+    if (areaParede >= 1 && areaParede <= 15) {
       return true;
     } else {
       return false;
@@ -71,4 +71,3 @@ class Validacoes {
 }
 
 export default Validacoes;
-
