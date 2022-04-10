@@ -1,4 +1,4 @@
-import { medidasPadroes, areas, alturaMinima } from "../services/constantes.js";
+import { medidasPadroes, areas, alturaMinima, latas } from "../services/constantes.js";
 
 class Utils{
 
@@ -38,16 +38,48 @@ class Utils{
 
     }
 
+    static quantidadeDeLatas(parede){
+        
+        let litros = this.converteTinta(parede)
+        const qtdLatas = []
+
+        if(litros >= latas.lata1){
+            const lata1 = litros / latas.lata1
+            qtdLatas.push(lata1);
+            litros = litros%latas.lata1;
+        }else{
+            qtdLatas.push(0);
+        }
+
+        if(litros >= latas.lata2){
+            const lata2 = litros / latas.lata2
+            qtdLatas.push(lata2);
+            litros = litros%latas.lata2;
+        }else{
+            qtdLatas.push(0);
+        }
+
+        if(litros >= latas.lata3){
+            const lata3 = litros / latas.lata3
+            qtdLatas.push(lata3);
+            litros = litros%latas.lata3;
+        }else{
+            qtdLatas.push(0);
+        }
+
+        if(litros > 0){
+            const lata4 = litros / latas.lata4
+            litros = litros%latas.lata4;
+            lata4 = litros > 0? lata4+1:lata4;
+            qtdLatas.push(lata4);          
+            
+        }else{
+            qtdLatas.push(0);
+        }
+
+        return qtdLatas;
+        
+    }
     
 
 }
-
-class Retorno {
-    constructor(lata, galao, lata2, lata3){
-        QuantidadeLatasDe18L = lata,
-        QuantidadeGaloes3_6L = galao,
-        QuantidadeLatas2_5L = lata2,
-        QuantidadeLatas0_5 = lata3
-       }
-  }
-  

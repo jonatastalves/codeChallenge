@@ -15,3 +15,9 @@ export const areas = {
 
 export const alturaMinima = medidasPadroes.alturaPorta+0.3
 
+export const latas = {
+    lata1 : 18,
+    lata2 : 3.6,
+    lata3 : 2.5,
+    lata4 : 0.5
+}
