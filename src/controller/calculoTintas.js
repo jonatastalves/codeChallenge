@@ -11,7 +11,7 @@ export class Tintas{
             const objParedes = req.body;
             const objValidado = Validacoes.validaBody(objParedes, 4)
 
-            if(Validacoes.objValido(objParedes, 4)){
+            if(Validacoes.objValido(objValidado)){
                 const latas = Utils.quantidadeDeLatas(objValidado);
                 const resposta = new Saida(...latas)
                 res.status(200).json(resposta);
