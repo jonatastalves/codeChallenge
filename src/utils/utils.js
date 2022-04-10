@@ -4,7 +4,7 @@ class Utils{
 
     static calculaArea(parede){
 
-        const areaParede = parede.alturaDaParede * parede.larguraDaParede;
+        const areaParede = parede.altura * parede.largura;
         const areaPortas = parede.numeroDePortas * areas.areaPorta;
         const areaJanelas = parede.numeroDeJanelas * areas.areaJanela;
 
@@ -16,13 +16,14 @@ class Utils{
     
     static somaArea(parede){
         
-        const areaTotal = 0
+        let areaTotal = 0
 
-        for(let i = 0; parede > i; i++){
+        for(let i = 0; parede.length > i; i++){
             
             let areaAtual = this.calculaArea(parede[i])
-
+            
             areaTotal += areaAtual
+            
         }
 
         return areaTotal
@@ -38,44 +39,37 @@ class Utils{
 
     }
 
+    static calculoLata(volumeLata, litros){
+        
+        const resposta = [];
+        const lata = Math.round(litros / volumeLata)
+        let sobra = litros - (lata * volumeLata);
+
+        sobra = sobra > 0? sobra:0;
+
+        if(lata > 0){
+            resposta.push(lata) 
+            resposta.push(sobra)
+        }else{
+            resposta.push(0);
+            resposta.push(sobra);
+        }
+
+        return resposta;
+    }
+
     static quantidadeDeLatas(parede){
         
         let litros = this.converteTinta(parede)
         const qtdLatas = []
+        const arrLatas = Object.values(latas)
+        let calculo = []
 
-        if(litros >= latas.lata1){
-            const lata1 = litros / latas.lata1
-            qtdLatas.push(lata1);
-            litros = litros%latas.lata1;
-        }else{
-            qtdLatas.push(0);
-        }
-
-        if(litros >= latas.lata2){
-            const lata2 = litros / latas.lata2
-            qtdLatas.push(lata2);
-            litros = litros%latas.lata2;
-        }else{
-            qtdLatas.push(0);
-        }
-
-        if(litros >= latas.lata3){
-            const lata3 = litros / latas.lata3
-            qtdLatas.push(lata3);
-            litros = litros%latas.lata3;
-        }else{
-            qtdLatas.push(0);
-        }
-
-        if(litros > 0){
-            const lata4 = litros / latas.lata4
-            litros = litros%latas.lata4;
-            lata4 = litros > 0? lata4+1:lata4;
-            qtdLatas.push(lata4);          
-            
-        }else{
-            qtdLatas.push(0);
-        }
+        arrLatas.forEach((elemento)=>{
+            calculo = this.calculoLata(elemento, litros);
+            qtdLatas.push(calculo[0]);
+            litros = calculo[1];
+        })
 
         return qtdLatas;
         
@@ -83,3 +77,5 @@ class Utils{
     
 
 }
+
+export default Utils;

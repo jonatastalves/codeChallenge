@@ -1,4 +1,3 @@
-import express from "express";
 import Validacoes from "../services/validacoes.js";
 
 test("Validar altura se tiver porta e altura menor",()=>{
