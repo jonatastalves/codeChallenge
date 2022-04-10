@@ -1,0 +1,29 @@
+{
+  "name": "codechallenge",
+  "version": "1.0.0",
+  "description": "Digital Republic - Desafio Code Challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonatastalves/codeChallenge.git"
+  },
+  "author": "Jonatas Torres Alves",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jonatastalves/codeChallenge/issues"
+  },
+  "homepage": "https://github.com/jonatastalves/codeChallenge#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
