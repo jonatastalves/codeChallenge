@@ -1,7 +1,11 @@
 import { medidasPadroes, areas, alturaMinima, latas } from "../services/constantes.js";
 
 class Utils{
-
+/**
+ * 
+ * @param {object} parede 
+ * @returns number
+ */
     static calculaArea(parede){
 
         const areaParede = parede.altura * parede.largura;
@@ -13,7 +17,11 @@ class Utils{
         return area;
 
     }
-    
+/**
+ * 
+ * @param {object} parede 
+ * @returns number
+ */
     static somaArea(parede){
         
         let areaTotal = 0
@@ -28,7 +36,11 @@ class Utils{
 
         return areaTotal
     }
-
+/**
+ * 
+ * @param {object} parede 
+ * @returns number
+ */
     static converteTinta(parede){
         
         const areaDeParedes = this.somaArea(parede)
@@ -38,7 +50,12 @@ class Utils{
         return litroDeTintas;
 
     }
-
+/**
+ * 
+ * @param {Number} volumeLata 
+ * @param {Number} litros 
+ * @returns {Array<number>}
+ */
     static calculoLata(volumeLata, litros){
         
         const resposta = [];
@@ -57,7 +74,11 @@ class Utils{
 
         return resposta;
     }
-
+/**
+ * 
+ * @param {object} parede 
+ * @returns {Array<number>}
+ */
     static quantidadeDeLatas(parede){
         
         let litros = this.converteTinta(parede)
