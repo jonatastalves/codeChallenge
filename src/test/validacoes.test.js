@@ -1,3 +1,4 @@
+import express from "express";
 import Validacoes from "../services/validacoes.js";
 
 test("Validar altura se tiver porta e altura menor",()=>{
@@ -30,4 +31,28 @@ test("Validação de objeto", ()=>{
 
 test("Validação de objeto", ()=>{
     expect(Validacoes.objValido([])).toBe(true);
+})
+
+test("Validação de área de portas e janelas", ()=>{
+    expect(Validacoes.validaAreaPortasEJanelas({alturaDaParede: 3, larguraDaParede: 3, numeroDePortas: 1, numeroDeJanelas: 1})).toBe(true)
+})
+
+test("Validação de área de portas e janelas", ()=>{
+    expect(Validacoes.validaAreaPortasEJanelas({alturaDaParede: 3, larguraDaParede: 3, numeroDePortas: 2, numeroDeJanelas: 2})).toBe(false)
+})
+
+test("Validação de área da parede", ()=>{
+    expect(Validacoes.validaArea({alturaDaParede: 3, larguraDaParede: 3, numeroDePortas: 1, numeroDeJanelas: 1})).toBe(true)
+})
+
+test("Validação de área da parede", ()=>{
+    expect(Validacoes.validaArea({alturaDaParede: 3, larguraDaParede: 3, numeroDePortas: 2, numeroDeJanelas: 2})).toBe(false)
+})
+
+test("Validação de área da parede", ()=>{
+    expect(Validacoes.validaArea({alturaDaParede: 0.5, larguraDaParede: 0.5, numeroDePortas: 0, numeroDeJanelas: 0})).toBe(false)
+})
+
+test("Validação de área da parede", ()=>{
+    expect(Validacoes.validaArea({alturaDaParede: 1, larguraDaParede: 1, numeroDePortas: 0, numeroDeJanelas: 0})).toBe(true)
 })
