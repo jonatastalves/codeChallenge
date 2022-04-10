@@ -1,8 +1,44 @@
+import { medidasPadroes, areas, alturaMinima } from "../services/constantes.js";
+
 class Utils{
-    //static calculaArea (area total da parede1 e etc -- number)
-    // static somaArea (soma as 4 areas -- number)
-    // static converteTinta (calcular tinta necessaria para area total -- number)
-    // static quantidadeLatas (saber quantas tintas/latas num array -- )
+
+    static calculaArea(parede){
+
+        const areaParede = parede.alturaDaParede * parede.larguraDaParede;
+        const areaPortas = parede.numeroDePortas * areas.areaPorta;
+        const areaJanelas = parede.numeroDeJanelas * areas.areaJanela;
+
+        const area = areaParede - (areaPortas + areaJanelas)
+
+        return area;
+
+    }
+    
+    static somaArea(parede){
+        
+        const areaTotal = 0
+
+        for(let i = 0; parede > i; i++){
+            
+            let areaAtual = this.calculaArea(parede[i])
+
+            areaTotal += areaAtual
+        }
+
+        return areaTotal
+    }
+
+    static converteTinta(parede){
+        
+        const areaDeParedes = this.somaArea(parede)
+
+        const litroDeTintas = areaDeParedes / medidasPadroes.metroPorLitro;
+
+        return litroDeTintas;
+
+    }
+
+    
 
 }
 
