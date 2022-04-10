@@ -3,11 +3,11 @@ import { medidasPadroes, areas, alturaMinima } from "../services/constantes.js";
 class Validacoes {
   static validaAltura(parede) {
     let alturaMinimaParede = 0;
-    const altura = parede.alturaDaParede;
+    const altura = parseInt(parede.altura);
 
     if (this.temPorta(parede)) alturaMinimaParede = alturaMinima;
-
-    if (typeof altura == "number" && altura > alturaMinimaParede) {
+    
+    if (altura && altura > alturaMinimaParede) {
       return true;
     } else {
       return false;
@@ -15,6 +15,7 @@ class Validacoes {
   }
 
   static temPorta(parede) {
+    
     if (parede.numeroDePortas && parede.numeroDePortas > 0) {
       return true;
     } else {
@@ -24,11 +25,12 @@ class Validacoes {
 
   static validaBody(body, length) {
     if (!body.length == length) return [false];
-
+    
     let arrReturn = [];
 
     for (let i = 0; i < body.length; i++) {
-      if (this.validaAltura(body[i].altura) && this.validaArea(body[i])) {
+            
+      if (this.validaAltura(body[i]) && this.validaArea(body[i])) {
         arrReturn.push(body[i]);
       } else {
         arrReturn.push(false);
@@ -46,7 +48,7 @@ class Validacoes {
   }
 
   static validaAreaPortasEJanelas(parede) {
-    const areaParede = parede.alturaDaParede * parede.larguraDaParede;
+    const areaParede = parede.altura * parede.largura;
     const areaPortas = parede.numeroDePortas * areas.areaPorta;
     const areaJanelas = parede.numeroDeJanelas * areas.areaJanela;
 
@@ -60,7 +62,7 @@ class Validacoes {
   static validaArea(parede) {
     if (!this.validaAreaPortasEJanelas(parede)) return false;
 
-    const areaParede = parede.alturaDaParede * parede.larguraDaParede;
+    const areaParede = parede.altura * parede.largura;
 
     if (areaParede >= 1 && areaParede <= 15) {
       return true;

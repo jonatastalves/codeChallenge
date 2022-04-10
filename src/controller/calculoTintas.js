@@ -1,6 +1,6 @@
 import Validacoes from "../services/validacoes.js";
 import Utils from "../utils/utils.js";
-import Saida from "../model/saida.js";
+import Saida from "../model/Saida.js";
 
 
 export class Tintas{
