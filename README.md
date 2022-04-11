@@ -104,3 +104,11 @@ Cada objeto acima representa 1 parede, informe a medida referente a altura, larg
 
 ```
 
+# Rodando teste
+
+Para rodar os teste, utilizando o framework Jest basta rodar o comando abaixo:
+
+```
+npm test
+```
+
