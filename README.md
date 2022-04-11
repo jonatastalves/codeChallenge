@@ -46,6 +46,13 @@ Você precisará instalar em seu PC: <br>
 3 - npm install: Para instalar as dependencias necessárias para rodar o projeto<br>
 4 - npm start: Para iniciar o Projeto<br>
 
+### Executando a API pelo Heroku:
+
+Você usará como rota o link informado:
+
+https://api-tintas.herokuapp.com/tintas
+
+
 # Rota da API
 
 ## Endereço
