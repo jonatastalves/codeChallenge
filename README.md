@@ -82,7 +82,6 @@ Uma aplicação web ou móvel que ajude o usuário a calcular uma quantidade de 
   }
 ]
 ```
-
 <h4>Observações:</h4>
 Cada objeto acima representa 1 parede, informe a medida referente a altura, largura, e se a parede possui porta e janela insira o numero referente no campo descrito!
 
@@ -97,3 +96,4 @@ Cada objeto acima representa 1 parede, informe a medida referente a altura, larg
 }
 
 ```
+
