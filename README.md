@@ -3,25 +3,6 @@
 </p>  
 
 
-# Pré-requisitos:
-
-### Instalando e executando a API localmente:
-
-Você precisará instalar em seu PC: <br>
-
-[Git](https://git-scm.com) ✔ <br>
-[Node.js](https://nodejs.org/en/) ✔ <br>
-[Insomnia](https://insomnia.rest/download) ✔ <br>
-[VSCode](https://code.visualstudio.com/) ✔ <br>
-
-# Passo a Passo
-## no terminal digite os comandos:
-
-1 - git clone https://github.com/jonatastalves/API-HAMBURGUERIA.git<br>
-2 - cd codeChallenge<br>
-3 - npm install: Para instalar as dependencias necessárias para rodar o projeto<br>
-4 - npm start: Para iniciar o Projeto<br>
-
 # Sobre
 
 API Rest criada para desafio (Code Challenge) proposto pela Digital Republic como parte do processo seletivo!
@@ -45,6 +26,25 @@ Uma aplicação web ou móvel que ajude o usuário a calcular uma quantidade de 
 -2,5L
 -3,6 litros
 -18 litros
+
+# Pré-requisitos:
+
+### Instalando e executando a API localmente:
+
+Você precisará instalar em seu PC: <br>
+
+[Git](https://git-scm.com) ✔ <br>
+[Node.js](https://nodejs.org/en/) ✔ <br>
+[Insomnia](https://insomnia.rest/download) ✔ <br>
+[VSCode](https://code.visualstudio.com/) ✔ <br>
+
+# Passo a Passo
+## no terminal digite os comandos:
+
+1 - git clone https://github.com/jonatastalves/API-HAMBURGUERIA.git<br>
+2 - cd codeChallenge<br>
+3 - npm install: Para instalar as dependencias necessárias para rodar o projeto<br>
+4 - npm start: Para iniciar o Projeto<br>
 
 # Rota da API
 
